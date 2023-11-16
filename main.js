@@ -63,7 +63,6 @@ function testEnter (event) {
       checkInput()
     }
   }
-  // HI
 
 sendButton.addEventListener("click",checkInput)
 userInput.addEventListener("keypress",testEnter)
