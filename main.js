@@ -8,7 +8,7 @@ let pluImage = document.getElementById("image")
 // Wird als allererstes geladen
 document.addEventListener("DOMContentLoaded",()=> {
 // auf liste zugreifen
-fetch("plulist.json")
+fetch("http://192.168.0.59:3000/plulist")
    // in json umwandeln
   .then( (response)=> response.json() )
   // wert auslesen
@@ -59,7 +59,6 @@ function checkInput () {
 
 function testEnter (event) {
   if (event.key == 'Enter') {
-      userInput.blur()
       checkInput()
     }
   }
