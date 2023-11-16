@@ -30,20 +30,42 @@ function nextPlu() {
 }
 
 function checkInput () {
+  
     if (userInput.value == plulist_global[randomNumber].plu){
-        alert("Richtig!")
+        Swal.fire({
+            title: "Richtig!",
+            text: "Mach weiter so!",
+            icon: "success"
+          });
         userInput.value = ""
         nextPlu()
+    } else if (userInput.value == ""){
+        Swal.fire({
+            title: "",
+            text: "Bitte gib eine PLU Nummer ein!",
+            icon: "info"
+          });
+    
     } else {
-        alert("Falsch! Richtige Antwort wäre "+ plulist_global[randomNumber].plu)
+        Swal.fire({
+            title: "Leider Falsch",
+            text: "Die richtige Antwort wäre "+ plulist_global[randomNumber].plu,
+            icon: "error"
+          });
         userInput.value = ""
      }
 
 }
 
-
+function testEnter (event) {
+  if (event.key == 'Enter') {
+      userInput.blur()
+      checkInput()
+    }
+  }
 
 sendButton.addEventListener("click",checkInput)
+userInput.addEventListener("keypress",testEnter)
 
 
 
