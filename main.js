@@ -8,7 +8,7 @@ let pluImage = document.getElementById("image")
 // Wird als allererstes geladen
 document.addEventListener("DOMContentLoaded",()=> {
 // auf liste zugreifen
-fetch("http://192.168.0.59:3000/plulist")
+fetch("https://plu-backend.onrender.com/plulist")
    // in json umwandeln
   .then( (response)=> response.json() )
   // wert auslesen
